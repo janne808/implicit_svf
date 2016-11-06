@@ -62,8 +62,7 @@ for tt=tt
     for mm=1:32
         dd=cc-aa-q*xx-0.5*f*(tanh(bb)+tanh(xx));
         xx2=xx-(xx-0.5*f*tanh(dd)-A_n)/...
-                 (1-(f*(q-(f*(tanh(xx)^2-1))/2)*...
-                    (tanh(dd)^2-1))/2);
+                 (1-0.5*f*(q-0.5*f*(tanh(xx)^2-1))*(tanh(dd)^2-1));
         %disp(['step: ' num2str(mm) ' xx: ' num2str(xx)...
         %      ' dx:' num2str(xx2-xx)]);
         if(abs(xx2-xx)<1e-15)
